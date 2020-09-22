@@ -55,14 +55,14 @@ btn.addEventListener('click', () => {
     
 })
 
-export default function info(data) {
+function info(data) {
     city.textContent = data.location.name;
     time.textContent = data.location.localtime;
     temp.textContent = data.current.temp_c + ' °'
     main.style.display = 'flex';
 
     // Features
-    humidity.textContent = ' Umidita\': ' + data.current.humidity + '%';
+    humidity.textContent = 'Umidita\': ' + data.current.humidity + '%';
     gust.textContent = 'Velocita\' vento: ' + data.current.gust_kph + ' Km/h';
     pression.textContent = 'Pressone: ' + data.current.pressure_in + ' mbar';
 

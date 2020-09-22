@@ -27,7 +27,7 @@ window.addEventListener('load', () => {   // Al caricamento della pagina esegue 
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            fetch(`https://api.weatherapi.com/v1/current.json?key=7ec877ac8fcd40be90502612200609&q=${lat},${long}`)
+            fetch(`https://api.weatherapi.com/v1/current.json?key=`+ process.env.S3_API + `&q=${lat},${long}`)
             .then((response) => {
                 return response.json();
             })
@@ -36,12 +36,14 @@ window.addEventListener('load', () => {   // Al caricamento della pagina esegue 
             }).catch((err) => console('Qualcosa e\' andato storto'))
         })
     }
+
+    console.log(process.env.KEY_VALUE);
     
 })
 
 btn.addEventListener('click', () => {
 
-    fetch('https://api.weatherapi.com/v1/current.json?key=7ec877ac8fcd40be90502612200609&q='+ input.value)
+    fetch('https://api.weatherapi.com/v1/current.json?key='+ process.env.S3_API +'&q='+ input.value)
     .then((response) => {
         return response.json();
     })

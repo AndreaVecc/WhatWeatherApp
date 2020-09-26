@@ -33,7 +33,6 @@ window.addEventListener('load', () => {   // Al caricamento della pagina esegue 
             })
             .then((data) => {
                 info(data);
-                console.log(data);
             }).catch((err) => console('Qualcosa e\' andato storto'))
         })
     }
@@ -86,12 +85,12 @@ function info(data) {
         cloud.style.display = 'none';
         overcast.style.display = 'block';
         rain.style.display = 'none';
-    } else if (data.current.condition.text === 'Moderate or heavy rain with thunder' || data.current.condition.text === 'Light rain' || data.current.condition.text === 'Moderate rain at times') {
+    } else if (data.current.condition.text === 'Moderate or heavy rain with thunder' || data.current.condition.text === 'Light rain' || data.current.condition.text === 'Moderate rain at times' || data.current.condition.text === 'Moderate or heavy rain shower') {
         clear.style.display = 'none';
         cloud.style.display = 'none';
         overcast.style.display = 'none';
         rain.style.display = 'block';
     } else {
-        return
+        return clear.style.display = 'block';
     }
 }

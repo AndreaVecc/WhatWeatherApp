@@ -49,6 +49,7 @@ btn.addEventListener('click', () => {
     })
     .then((data) => {
         info(data);
+        console.log(data);
         input.value = '';
     })
     .catch((error) => {

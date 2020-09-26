@@ -90,5 +90,7 @@ function info(data) {
         cloud.style.display = 'none';
         overcast.style.display = 'none';
         rain.style.display = 'block';
+    } else {
+        return
     }
 }

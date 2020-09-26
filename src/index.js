@@ -33,6 +33,7 @@ window.addEventListener('load', () => {   // Al caricamento della pagina esegue 
             })
             .then((data) => {
                 info(data);
+                console.log(data);
             }).catch((err) => console('Qualcosa e\' andato storto'))
         })
     }
